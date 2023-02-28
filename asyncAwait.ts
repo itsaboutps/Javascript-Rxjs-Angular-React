@@ -17,7 +17,8 @@ function Async() {
 }
 
 //calling above function
-//**uncomment me-> Async()
+//**uncomment me-> 
+// Async()
 
 /**
  * !ASYNC KEYWORD BEFORE FUNCTION ALWAYS RETURNS PROMISE
@@ -32,15 +33,16 @@ async function AsyncA() {
 
 //*uncomment me->  AsyncA()  
 
-/**
- *    async function AsyncA(){
+
+     async function AsyncA(){
       console.log("I am being called")
 }
-      AsyncA()
-      VM268:2 I am being called
-      Promise {<fulfilled>: undefined}
- */
-// *uncomment me-> AsyncA().then(console.log)
+      // AsyncA()
+      // VM268:2 I am being called
+      // Promise {<fulfilled>: undefined}
+
+// *uncomment me-> 
+// AsyncA().then(console.log)
 // ------------------------------------------------
 //******************************************************START************************************************** */
 let promise=new Promise((resolve,reject)=>{
@@ -74,18 +76,67 @@ async function getDataUsingAsyncAwait(){
 
 //* data will be received after 2 seconds
 
-//* uncoment me ---> getDataUsingAsyncAwait();
 //* uncoment me ---> 
-getDataUsingPromise();
+getDataUsingAsyncAwait();
+//* uncoment me ---> 
+// getDataUsingPromise();
 
 //******************************************************END************************************************** */
 
+/**
+ * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!IMPORTANT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ */
+
+/**
+ * !using promise
+ */
+  // private calcAspectRatio(selectedFile): Promise<boolean> {
+  //   return new Promise((resolve, reject) => {
+  //     const file = selectedFile;
+  //     const img = new Image();
+  //     let aspectRatio: boolean;
+  //     img.src = URL.createObjectURL(file);
+  //     img.onload = () => {
+  //       console.log(img.width / img.height)
+  //       aspectRatio = (img.width / img.height) > 2.0 ? true : false;
+  //       resolve(aspectRatio);
+  //     };
+  //   })
+  // }
 
 
+/**
+ * !using async await 
+ */
+  // private async calcAspectRatio(selectedFile): Promise<boolean> {
+  //   const file = selectedFile;
+  //   const img = new Image();
+  //   let aspectRatio: boolean;
+  //   img.src = URL.createObjectURL(file);
+  //   await new Promise((resolve, reject) => img.onload = resolve);
+  //   aspectRatio = (img.width / img.height) > 2.0;
+  //   return aspectRatio;
+  // }
 
 
+  // private previewLogoOnUpload(extension: string, reader: FileReader, selectedFile, formData: FormData) {
+  //   this.calcAspectRatio(selectedFile).then((hasValidAspectRatio :boolean)=>{
+  //       if (hasValidAspectRatio) {
+  //         this.setImgData(extension, reader, selectedFile);
+  //         formData.append('file', selectedFile);
+  //         formData.append('path', this.http.request?.toString());
+  //         this.logoData = formData;
+  //       } else {
+  //         this.commonService.showErrorMessage({ msg: "Aspect ratio should be greater than 2." });
+  //       }
+  //   })
+    
+  // }
 
 
+/**
+ * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!IMPORTANT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ */
 
 
 
